@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bill" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="34587fde-afd6-4ef8-9b7f-49b8ed048a37">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="bookName" class="java.lang.String"/>
+	<field name="price" class="java.lang.Double"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="totalPrice" class="java.lang.Double"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="recipientName" class="java.lang.String"/>
+	<field name="total" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="0" width="210" height="30" uuid="f1e09049-2f23-4900-9437-8cb102eec3de"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Bill infomation]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="179" splitType="Stretch">
+			<staticText>
+				<reportElement x="45" y="0" width="100" height="30" uuid="cfe0aa96-9b06-4802-be42-1e80e6905ed1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93f91e9b-17f5-4878-87fa-d7142541d84b"/>
+				</reportElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="0" width="100" height="30" uuid="d74535b6-5046-4882-9043-bea0df723339">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2dc0fa25-2c20-4a40-bfc0-f6cc48574e68"/>
+				</reportElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="100" height="30" uuid="2bc86b94-8092-42ad-a8fb-041a3b5248af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc10fb7a-bbb8-49cb-a7e1-b92a81d505ab"/>
+				</reportElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="0" width="100" height="30" uuid="6863fe14-dafe-4608-a069-56a377bdbc0c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8850bdfb-4032-4f66-a306-034bbc4b05f7"/>
+				</reportElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="185" y="45" width="380" height="30" uuid="32d832d2-9459-4325-b941-4ef6ab151f38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dcd58f1-5a74-4939-a21d-1e152738d71d"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" pdfFontName="DejaVu Sans" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="75" width="380" height="30" uuid="cca72619-79f7-4828-8166-8d3ad201d346">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1c98649-a598-4779-aa2b-fa6d5acd11ee"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="15" width="380" height="30" uuid="0b68acd9-cc75-4fd8-ae79-533aef5137b8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d125b567-14a4-4294-85c3-76e243c77a07"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" pdfFontName="DejaVu Sans" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{recipientName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="15" width="100" height="30" uuid="31a39691-c100-407c-8e31-ef23946db835">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d125b567-14a4-4294-85c3-76e243c77a07"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Recipient Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="45" width="100" height="30" uuid="b3f7e226-d7b1-461d-b921-860c180e7e81">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dcd58f1-5a74-4939-a21d-1e152738d71d"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="105" width="100" height="30" uuid="2ea18358-2494-4040-aab5-bd353ea13cf7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab58a12a-6d52-4a94-920f-1878f8ba8ec0"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Shipping :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="75" width="100" height="30" uuid="ed51fbb7-adb9-402f-b4f0-06429034f1b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1c98649-a598-4779-aa2b-fa6d5acd11ee"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone :]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="185" y="137" width="380" height="30" uuid="cd0e9017-51c9-496a-b260-205ea79e9152">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab58a12a-6d52-4a94-920f-1878f8ba8ec0"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="137" width="100" height="30" uuid="3139f78a-72d4-4c94-96ef-f818a313dfc1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab58a12a-6d52-4a94-920f-1878f8ba8ec0"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="110" width="100" height="30" uuid="877941e9-0885-4423-a49c-55c07b944bda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab58a12a-6d52-4a94-920f-1878f8ba8ec0"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[30,000]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="100" height="30" uuid="68139ed7-0863-442a-8aa2-9ad6324bbc8c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93f91e9b-17f5-4878-87fa-d7142541d84b"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement>
+					<font fontName="DejaVu Sans" pdfFontName="DejaVu Sans" pdfEncoding="Identity-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bookName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="130" y="20" width="100" height="30" uuid="d2ed0fad-7eed-40cc-a9dc-e912eafb16ba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2dc0fa25-2c20-4a40-bfc0-f6cc48574e68"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="20" width="100" height="30" uuid="737b4fdd-b119-4883-89ad-cb768dc37169">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc10fb7a-bbb8-49cb-a7e1-b92a81d505ab"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="400" y="20" width="100" height="30" uuid="79d61cd9-31ac-4854-806d-583924d6b013">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8850bdfb-4032-4f66-a306-034bbc4b05f7"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{totalPrice}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-20" y="-5" width="600" height="1" uuid="21ee1bc7-fa7a-4013-b782-48d5b35a0810"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

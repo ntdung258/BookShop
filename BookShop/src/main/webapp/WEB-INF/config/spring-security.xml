@@ -1,0 +1,110 @@
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-5.7.xsd">
+
+	<http auto-config="true">
+		<csrf disabled="true" />
+		<intercept-url pattern="/resource/*" access="permitAll" />
+		<intercept-url pattern="/account/view-login"
+			access="permitAll" />
+		<intercept-url pattern="/account/view-register"
+			access="permitAll" />
+		<intercept-url pattern="/account/register"
+			access="permitAll" />
+		<intercept-url pattern="/account/login"
+			access="permitAll" />
+		<intercept-url pattern="/account/logout"
+			access="permitAll" />
+
+
+		<intercept-url pattern="/admin/account/update-account"
+			access="hasRole('ROLE_ADMIN')" />
+
+		<intercept-url pattern="/admin/home/**"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+
+		<intercept-url pattern="/admin/bill/**"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+
+
+		<intercept-url pattern="/admin/account/view-account"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/account/search-account/*"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+
+		<intercept-url pattern="/admin/author/view-author"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/author/report-author"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/author/search-author/*"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+
+		<intercept-url pattern="/admin/category/view-category"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/category/report-category"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/category/search-category/*"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+
+		<intercept-url pattern="/admin/product/view-product"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/product/report-product"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/product/search-product/*"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" />
+		<intercept-url pattern="/admin/**"
+			access="hasRole('ROLE_ADMIN')" />
+
+
+
+		<!-- <intercept-url pattern="/admin/account/update-account" access="hasRole('ROLE_ADMIN')" 
+			/> <intercept-url pattern="/admin/account/**" access="hasRole('ROLE_ADMIN') 
+			or hasRole('ROLE_EMPLOYEE')" /> <intercept-url pattern="/admin/author/**" 
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" /> <intercept-url 
+			pattern="/admin/bill/**" access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" 
+			/> <intercept-url pattern="/admin/category/**" access="hasRole('ROLE_ADMIN') 
+			or hasRole('ROLE_EMPLOYEE')" /> <intercept-url pattern="/admin/home/**" access="hasRole('ROLE_ADMIN') 
+			or hasRole('ROLE_EMPLOYEE')" /> <intercept-url pattern="/admin/product/**" 
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')" /> -->
+
+
+		<intercept-url pattern="/account/**"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE')  or hasRole('ROLE_USER')" />
+		<intercept-url pattern="/cart/**"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE') or hasRole('ROLE_USER')" />
+		<intercept-url pattern="/checkout/**"
+			access="hasRole('ROLE_ADMIN') or hasRole('ROLE_EMPLOYEE') or hasRole('ROLE_USER')" />
+
+
+		<form-login login-page="/account/view-login"
+			login-processing-url="/account/login"
+			authentication-success-handler-ref="customAuthenticationSuccessHandler"
+			authentication-failure-url="/account/view-login?error"
+			username-parameter="email" password-parameter="password" />
+
+		<logout logout-url="/j_spring_security_logout"
+			logout-success-url="/account/view-login" delete-cookies="JSESSIONID" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider
+			user-service-ref="customUserDetailService">
+			<password-encoder ref="passwordEncoder" />
+		</authentication-provider>
+	</authentication-manager>
+
+
+	<beans:bean id="customUserDetailService"
+		class="bookshop.service.CustomUserDetailService"></beans:bean>
+	<beans:bean id="customAuthenticationSuccessHandler"
+		class="bookshop.service.CustomAuthenticationSuccessHandler"></beans:bean>
+
+
+
+
+</beans:beans>
